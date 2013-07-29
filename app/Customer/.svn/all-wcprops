@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/Mobile-Application/!svn/ver/2346/POC/RHO/FieldServiceManagement/app/Customer
+END
+createWO.erb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Mobile-Application/!svn/ver/2345/POC/RHO/FieldServiceManagement/app/Customer/createWO.erb
+END
+customer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Customer/customer.rb
+END
+customer_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2346/POC/RHO/FieldServiceManagement/app/Customer/customer_controller.rb
+END

@@ -1,0 +1,68 @@
+<div id="document_for_signature">
+<br>
+
+Signature:   <img src="signature_placeholder.png" id="id_placeholder" width="70%" height="60%" onload="checkSize()"/>
+<br>
+<br>
+
+<INPUT type="button" id="id_button_back" value="BACK"  name="id_button_back" onClick="onBack();">
+
+
+<INPUT type="button" id="id_button_clear" value="CLEAR" name="id_button_clear" onClick="onClear();">
+
+
+<INPUT type="button" id="id_button_capture" value="CAPTURE" name="id_button_capture" onClick="onCapture();">
+
+<br>
+
+</div>
+
+<script type="text/javascript">
+
+
+function pageY(elem) {
+    return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
+}
+
+function pageX(elem) {
+    return elem.offsetParent ? (elem.offsetLeft + pageX(elem.offsetParent)) : elem.offsetLeft;
+}
+
+
+function checkSize() {
+    if (!document.getElementById('id_placeholder')) {
+        return;
+    }
+
+    var pixel_ratio = 1;
+
+<% if System::get_property('platform') == 'ANDROID'%>               
+    pixel_ratio = window.devicePixelRatio;
+<% end %>                 
+
+    var _left = Math.round(pageX(document.getElementById('id_placeholder')) * pixel_ratio);
+    var _top = Math.round(pageY(document.getElementById('id_placeholder')) * pixel_ratio);
+    var _width = Math.round(document.getElementById('id_placeholder').width * pixel_ratio);
+    var _height = Math.round(document.getElementById('id_placeholder').height * pixel_ratio);
+    $.get('/app/SignCapture/call_set_rect', {left: _left, top: _top, width: _width, height: _height}); 
+}
+
+window.onresize = checkSize;
+
+
+function onBack() {
+  $.get('/app/SignCapture/do_back', {});
+  return false;
+}
+
+function onClear() {
+  $.get('/app/SignCapture/do_clear', {});
+  return false;
+}
+
+function onCapture() {
+  $.get('/app/SignCapture/do_capture', {});
+  return false;
+}
+
+</script>

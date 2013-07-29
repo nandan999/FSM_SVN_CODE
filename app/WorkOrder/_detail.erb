@@ -1,0 +1,557 @@
+<script src="/public/js/FSM/WOdetail.js" type="text/javascript"></script>
+
+<script>
+    <% $parts_group = 0 %>
+    phone = "<%= $phone %>";
+    platform = "<%= platform %>";
+    $(document).ready(function() {
+      var tab = "<%= $selectedTab %>";
+      var page = "<%= $photosPage %>";
+      var partsPage = "<%= $partsPage %>";
+      if(tab == "")
+        tab = "Details";
+      selectedSection = tab;
+      $('#detailsTab').removeClass('activeTab');
+      $('#' + selectedSection.toLowerCase() + "Tab").addClass('activeTab');
+      if(tab == "Photos")
+        {
+          if(page=="PhotosDelete")
+              tab = "Photos_with_delete";
+        }
+        else if(tab == "Parts")
+          {
+            if(partsPage=="PartsScan")
+              tab = "Parts_Scan";
+            else if(partsPage=="PartsDelete")
+              tab = "Parts_Delete";
+          }
+        changeHeader(tab);
+        
+      if(document.getElementById("pageValue").value == "Parts")
+      {
+        setBarcodeValues();
+      }
+
+      <% if @params["orientation_change"] == "true" %> 
+       var partcodeno = "<%= $values['PartbarcodeValue'] %>";
+       var serialcodeno = "<%= $values['PartSerialValue'] %>";  
+       var contactName = "<%= $values['contact_name'] %>" ;
+       var value = "<%= $values['selectBox'] %>";
+       document.getElementById("PartbarcodeValue").value = partcodeno;
+       document.getElementById("PartSerialValue").value = serialcodeno;  
+       document.getElementById("contact_name").value = contactName;
+        var type = document.getElementById("selectBox");
+        setDropDownList(type, value);
+      <% end %>
+    });
+    
+  function changeTab(val)
+    {
+      if(selectedSection != val)
+        {
+            document.getElementById(selectedSection.toLowerCase()).style.display = "none";
+            document.getElementById(val.toLowerCase()).style.display = "inline";
+            $('#' + selectedSection.toLowerCase() + "Tab").removeClass('activeTab');
+            $('#' + val.toLowerCase() + "Tab").addClass('activeTab');
+            selectedSection = val;
+            $.get("/app/WorkOrder/change_tab",{tab : selectedSection});
+            if(val == "Photos")
+             {
+                  $.get("/app/WorkOrder/get_photos_page",{},function(data) {
+                   if(data=="PhotosDelete")
+                     changeHeader("Photos_with_delete");
+                   else
+                     changeHeader(val);
+                 });
+             }
+             else if(val == "Parts")
+               {
+                 $.get("/app/WorkOrder/get_parts_page",{},function(data) {
+                   if(data=="PartsDelete")
+                     changeHeader("Parts_Delete");
+                   else if(data=="PartsScan")
+                     changeHeader("Parts_Scan");
+                   else
+                     changeHeader(val);
+                 });
+               }
+           else
+              changeHeader(val);
+           <% if $woDefault != nil && $woDefault.WO_Status == "New" %>
+             $.get("/app/WorkOrder/open_WorkOrder",{},function(data) {
+               alert(data);
+             if(data=="true")
+               {
+                 location.reload();
+               }
+             });
+           <% end %>
+        }
+    }
+  
+    function take_signature()
+    {
+      document.getElementById("signatureCover").style.display = "block";
+      document.getElementById("signatureCover").style.opacity = 1;
+      var headers = document.getElementsByTagName("header");
+      for(var i=0;i<headers.length;i++){
+        headers[i].style.zIndex=2;
+        if(document.getElementById("calenderBoxPartial") != null)
+         document.getElementById("calenderBoxPartial").style.zIndex=2;
+      }
+      $.get('/app/WorkOrder/call_set_rect', {}); 
+    }
+    
+    function close_signature()
+    {
+      document.getElementById("signatureCover").style.display = "none";
+      $.get("/app/WorkOrder/call_remove_rect",{});
+    }
+    
+    function clear_sign()
+    {
+      $.get('/app/WorkOrder/sign_clear', {});
+      return false;
+    }
+    
+    function capture_sign()
+    {
+      document.getElementById("signatureCover").style.display = "none";
+      $.get('/app/WorkOrder/do_capture', {});
+    }
+  
+  function showFrame() {
+    <% if(platform.to_s == "APPLE") %>
+          <% if($phone) %>
+          document.getElementById('signaturebcg').innerHTML = "<img src='/public/images/FSM/signature_placeholder.png' height='50px' width='65%' id='id_placeholder'/>";
+          <% else %>
+          document.getElementById('signaturebcg').innerHTML = "<img src='/public/images/FSM/signature_placeholder.png' height='150px' width='55%' id='id_placeholder'/>";
+          <% end %>
+        <% else %>
+          document.getElementById('signaturebcg').innerHTML = "<img src='/public/images/FSM/signature_placeholder.png' height='28%' width='55%' id='id_placeholder'/>";  
+        <% end %>  
+
+       if (!document.getElementById('id_placeholder')) {
+         return;
+       }
+       var pixel_ratio = 1;
+        <% if platform == 'ANDROID'%>               
+          pixel_ratio = window.devicePixelRatio;
+        <% end %>      
+       var _left = Math.round(pageX(document.getElementById('id_placeholder')) * pixel_ratio);
+       var _top = Math.round(pageY(document.getElementById('id_placeholder')) * pixel_ratio);
+       var _width = Math.round(document.getElementById('id_placeholder').width * pixel_ratio);
+       var _height = Math.round(document.getElementById('id_placeholder').height * pixel_ratio);
+       $.get('/app/WorkOrder/call_set_rect', {left: _left, top: _top, width: _width, height: _height}); 
+     }
+  </script>
+
+<% if !$phone && orientation == "portrait" %>
+  <% if @display_popup == "true" %>
+    <section id="displayWorkOrderPopUpCover" onclick="displayWorkOrderPopUpCover();">
+  <% else %>
+    <section id="workOrderPopUpCover" onclick="workOrderPopUpCover();">
+  <% end %>
+      <section id="workOrderPopUp">
+        <%= render :partial => 'popupList' %>
+      </section>
+    </section>  
+<% end %>
+<% if !$phone && orientation == "landscape" %>
+  <header id="headerTag" data-role="header" data-position="inline" class="headerPartial">
+<% else %>
+  <header id="headerTag" data-role="header" data-position="inline" class="headerFull">
+<% end %>
+  <% if !$phone 
+      if orientation == "portrait"
+  %>
+        <a href="#" id="workOrderButtonTop" onclick="showWorkOrderPopUp();">Work Order</a>
+      <% end 
+      else
+        if platform == 'APPLE' %>
+            <a href="<%= url_for(:action => :toWorkOrderList, :query => {'value' => 'false'}) %>" id="backButton" >Back</a>
+      <% end
+      end %>
+    <h1 id="pageHeader"></h1>
+  </header>
+  <% if $selectedTab.class == NilClass || $selectedTab == "Details" %>
+    <section class="sectionVisible" id="details">
+  <% else %>
+    <section class="sectionHidden" id="details">
+  <% end %>
+  <% if !$phone && orientation == "landscape" %>
+      <div data-role="content" class="detailCntrPartial">
+  <% else %>
+      <div data-role="content" class="detailCntrFull">
+  <% end %>
+    <% if $woDefault != nil %>
+      <ul data-role="listview" class="rightRoundPanel">      
+      
+          <li> 
+             <span class="leftLabel"> Work Order Number</span>
+             <span class="floatRight"><%= $woDefault.WO_Id%></span>
+          </li>
+          
+          <li> 
+             <span class="leftLabel"> Work Order Type</span>
+             <span class="floatRight"><%= $woDefault.WO_Type%></span>
+          </li>
+          
+          <li> 
+             <span class="leftLabel"> Work Order Status</span>
+             <span class="workOrderDetailDescription"><%= $woDefault.WO_Status%></span>
+          </li>
+          
+          <li> 
+             <span class="leftLabel"> Description</span>
+             <span class="workOrderDetailDescription"><%= $woDefault.WO_Desc%></span>
+          </li>
+    </ul>
+    <% end %>
+  </div>
+  <section style="height:150px;">
+  </section>
+  </section>
+  
+  <% if $selectedTab == "Photos" %>
+    <section class="sectionVisible" id="photos">
+  <% else %>
+    <section class="sectionHidden" id="photos">
+  <% end %>
+    <section id="photosMain">
+    <div id="photosDiv">
+    <% if !$phone && orientation == "landscape" %>
+      <div data-role="content" class="detailCntrPartial">
+    <% else %>
+      <div data-role="content" class="detailCntrFull">
+    <% end 
+     @photos = []
+     if $woDefault != nil
+       @photos = find_workorderPhotos($woDefault.WO_Id)
+     end
+    if @photos != []
+      pagination = false
+      if !$phone && orientation == "landscape"
+        totalPhotos = @photos.count
+        if(totalPhotos>$photosPerPage)
+          pagination = true
+        end
+      end %>       
+        <div class="sectionVisible" id="photosListDiv">
+      <% else %>
+        <div class="sectionHidden" id="photosListDiv">
+      <% end %>
+          <ul data-role="listview" class="rightRoundPanel" id="photosList">
+            <% 
+            if($photosPage == "PhotosDelete")
+              @minusIconClass = "sectionVisible"
+              @imageClass = "photosImageRight"
+              @dateTimeClass = "photosDateTimeRight"
+            else
+              @minusIconClass = "sectionHidden"
+              @imageClass = "photosImageLeft"
+              @dateTimeClass = "photosDateTimeLeft"
+            end
+            @count = 1
+            @photos.each do |photo| 
+              stdTime = photo.Photos_Time
+              hours = get_formatted_hours(stdTime)
+      
+              if @count > $photosPerPage and pagination==true %>
+                <li id = "list<%= photo.Photos_Id %>" class="ui-li ui-li-static ui-body-c ui-li-has-thumb photosList" style="display:none;">
+              <% else %>
+                <li id = "list<%= photo.Photos_Id %>" class="ui-li ui-li-static ui-body-c ui-li-has-thumb photosList">
+              <% end
+              row = (@count)%($photosPerPage)
+              if row==1 and @count!=1 and pagination==true %>
+                <div onclick="nextPreviousPhotos(this.id);" id="previous" class="photoPrevious">Previous</div>
+              <% elsif row==0 and pagination==true and @count!=@photos.count %>
+                <div onclick="nextPreviousPhotos(this.id);" id="next" class="photoNext">Next</div>
+              <% end %>
+              <img src="/public/images/FSM/deleteIcon.png" onclick="delete_photo(this.id);" id="<%= photo.Photos_Id %>" class="<%= @minusIconClass %> minusIconPhotos" />
+              <img src="<%= Rho::RhoApplication::get_blob_path(photo.Photos_Path) %>" class="photosImage <%= @imageClass %>" onclick="zoomPhoto(this.src);"/>
+              <label class="photosDate <%= @dateTimeClass %>" id="Date<%= photo.Photos_Id %>" ><%= photo.Photos_Date %></label><br />
+              <label class="photosTime <%= @dateTimeClass %>" id="Time<%= photo.Photos_Id %>" ><%= hours %></label></li>
+              <% @count = @count + 1
+            end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </section>
+      <div id="photosAddButton" class="btnBox sectionVisibleBlock">
+        <% if $woDefault == nil || ($woDefault.WO_Status != "New" && $woDefault.WO_Status != "Open") %>
+          <input type="button" value="Add Photo" data-inline="true" disabled="disabled"/>
+        <% else %>
+          <input type="button" id="addPhotoButton" value="Add Photo" data-inline="true" onclick="javascript:addPhoto();"/>
+        <% end %>
+      </div>
+        <section style="height:150px;">
+        </section>
+  </section>
+  <% if $selectedTab == "Parts" %>
+    <section class="sectionVisible" id="parts">
+  <% else %>
+    <section class="sectionHidden" id="parts">
+  <% end %>
+    <% if !$phone && orientation == "landscape" %>
+     <div data-role="content" class="detailCntrPartial">
+   <% else %>
+     <div data-role="content" class="detailCntrFull">
+   <% end %>
+   <% if $partsPage != "PartsScan" %>
+    <div id="partsMain" class="sectionVisible" >
+   <% else %>
+    <div id="partsMain" class="sectionHidden" >
+    <% end %>
+        <div id = "partsSubMain">
+           <%  
+               if $partsPage == "PartsDelete"
+                 @deleteIconClass = "sectionVisible"
+               else  
+                 @deleteIconClass = "sectionHidden"
+               end   
+           %>
+            <%   @parts = []
+            if $woDefault != nil
+               @parts = find_workorderParts($woDefault.WO_Id)
+            end
+           
+            if @parts != [] 
+              pagination = false
+              if !$phone && orientation == "landscape"
+                 totalparts = @parts.count
+                 if(totalparts > $partsPerPage)
+                   pagination = true
+                 end
+              end
+            end %>
+   
+      <div  id="PartListPage"> 
+   
+      <%  count = 0 
+       if @parts == nil
+           @parts = []
+       end 
+       if @parts != [] %>
+         <ul data-role="listview" class="rightRoundPanel partUL" id="partsList">
+          <% @parts.each do 
+              @partList = inventoryParts(@parts[count].Parts_Id)
+               if count+1 > $partsPerPage and pagination==true%> 
+                 <li id="partData<%= @parts[count].Parts_Id%>"  class="ui-li ui-li-static ui-body-c partList" style="display:none;">
+               <% else %>
+                 <li id="partData<%= @parts[count].Parts_Id %>" class="ui-li ui-li-static ui-body-c partList">
+               <% end 
+                row = (count+1)%($partsPerPage)  
+                if row==1 and count+1!=1 and pagination==true %>
+                 <div onclick="updatePartsList(this.id);" id="previous" class="photoPrevious">Previous</div>
+                <% elsif row==0 and pagination==true and count+1!=@parts.count %>
+                 <div onclick="updatePartsList(this.id);" id="next" class="photoNext">Next</div>
+               <% end %>  
+                   <div id="listView">
+                      <span id="deleteIcon"><a href="#" id="click<%= count %>" onclick="onDeleteClick(this)"><img src="/public/images/FSM/deleteIcon.png" class="<%= @deleteIconClass %> minusIconParts"/></a></span>
+                      <span id="partIcon"><img src="/public/images/FSM/partListIcon.jpg" width="35px" height="35px"/></span>
+                      <span id="partDisplayList" class="partDisplayList">
+                         <p id="partId<%= count %>"><%= @partList[0].Parts_Number %></p>
+                         <p><%= @partList[0].Parts_Name %></p>
+                         <p><%= @partList[0].Parts_SerialNumber %></p></span></div></li>                      
+              <% count = count+1
+               end %>
+        </ul> 
+        <% end  %>  
+      </div> 
+    </div>
+     <div id="addParts" class="btnBox sectionVisibleBlock">
+      <% if $woDefault == nil ||($woDefault.WO_Status != "New" && $woDefault.WO_Status != "Open") %>
+      <input type="button" id="addtoListButton" value="Add Parts" data-inline="true" disabled/>
+      <% else %>
+      <input type="button" id="addtoListButton" value="Add Parts" data-inline="true" onclick="addPartsList()"/>
+      <% end %>   
+</div>    
+ </div>
+    
+    <% if $partsPage == "PartsScan" %>
+      <div class="sectionVisible" id="addPart" >
+    <% else %>
+      <div class="sectionHidden" id="addPart" >
+    <% end %>
+        
+        <ul data-role="listview" class="rightRoundPanel">      
+                 <li> 
+                 <div>
+                      <div>
+                           <span id="partNumber">Scan or Enter Part # </span>
+                           <div id="partNumberInputBox"><input type="text" id="PartbarcodeValue" onfocus="PartsfocusCheck(phone,platform,this.id)" onfocusout="focusOut(phone,platform)" value="" onkeyup="setValuesOnChange(this)" class="partInputBoxes"/></div>
+                      </div>
+                      <div id="serialShow">
+                           <span id="">Scan or Enter Serial # </span>
+                           <div id="serialNumberInputBox"><input type="text" id="PartSerialValue" value="" onfocus="SerialfocusCheck(phone,platform,this.id)" onfocusout="focusOut(phone,platform)" onkeyup="setValuesOnChange(this)" class="partInputBoxes"/></div>
+                       </div>
+                  </div>
+                 </li>
+             </ul>
+          <div class="btnBox" style="align:center;">
+           <input type="button" value="Cancel" onclick="javascript:cancelBarcode();" data-inline="true"/>
+           <input type="button" value="Clear" onclick="javascript:clearBarcode();" data-inline="true"/>
+           <input type="button" value="Scan" onclick="javascript:scanBarcode();" data-inline="true"/>
+         </div>
+    </div>
+  </div>
+ <section style="height:150px;">
+ </section>
+  </section>
+  
+  <% if $selectedTab == "Account" %>
+    <section class="sectionVisible" id="account">
+  <% else %>
+    <section class="sectionHidden" id="account">
+  <% end %>
+    <% if !$phone && orientation == "landscape" %>
+      <div data-role="content" class="detailCntrPartial">
+    <% else %>
+      <div data-role="content" class="detailCntrFull">
+    <% end %>
+    <% $customer = []
+    if $woDefault != nil
+      wr_id=WorkOrder.find(:all,:conditions => {:WO_Id => $woDefault.WO_Id, :WO_CreatedBy => $user})
+      cust_id=wr_id[0].C_Id
+      $customer = find_customer(cust_id)
+      c_id=$customer[0].C_Id
+     end 
+        if $customer != [] %>
+          <div class="sectionVisible" id="accountDiv">
+        <% else %>
+          <div class="sectionHidden" id="accountDiv">
+        <% end %>
+        <ul data-role="listview" class="rightRoundPanel">    
+      <% if $customer != [] %>
+            <li> 
+               <span class="leftLabel"> Customer</span><br/>
+               <span><%= $customer[0].C_Name  %></span>
+            </li>
+            <li> <a href="<%= url_for(:action => :direction, :query => {'count' => '0', 'Header' => 'Account'}) %>">
+               <span class="leftLabel"> Location</span><br/>
+               <span class="custadd"><%= $customer[0].C_Address %></span>
+               <span><img src="/public/images/FSM/location-icon.png" /></span>
+               </a>
+            </li>
+            <li> 
+               <span class="leftLabel"> Contact</span><br/>
+               <span><%= $customer[0].C_Contact %></span>
+            </li>
+            <li> 
+               <span class="leftLabel"> Service Hours</span><br/>
+               <span><%= $customer[0].C_ServiceHours %></span>
+            </li>
+      <% end %>
+        </ul>
+        </div>
+      </div>
+<section style="height:150px;">
+ </section>
+  </section>
+  
+<% @height = System::get_property('screen_height').to_i %>
+  <% @height = @height - 90 %>
+  <% if $selectedTab == "Close" %>
+      <section class="sectionVisible" id="close">
+  <% else %>
+    <section class="sectionHidden" id="close">
+  <% end %>
+    <% if orientation == "landscape" %>
+      <div data-role="content" class="detailCntrPartial">
+    <% else %>
+      <div data-role="content" class="detailCntrFull">
+    <% end %>
+
+    <ul data-role="listview" class="rightRoundPanel" style="margin-top:50px;">
+    <li> 
+      <span class="statusLbl leftLabel"> Status</span>
+      <% if $phone && platform == "APPLE" && orientation == "portrait"%>
+        <span class="closedOptSecIphone">
+      <% else %>  
+        <span class="closedOptSec">
+      <% end %>
+      
+      <% if $woDefault!= nil && ($woDefault.WO_Status == "New" || $woDefault.WO_Status == "Open") %>
+        <select id="selectBox" onchange="dropdown_change(this);">
+          <option value="Closed:Complete">Closed:Complete</option>
+          <option value="Closed:Incomplete">Closed:Incomplete</option>
+          <option value="Hold for Parts">Hold for Parts</option>
+        </select >
+      <% else %>
+        <% if $woDefault != nil %>
+          <select disabled>
+            <option value="<%= $woDefault.WO_Status %>"><%= $woDefault.WO_Status %></option>
+          </select >
+        <% else %>
+          <select disabled>
+            <option value=""></option>
+          </select >
+        <% end %>
+      <% end %>
+      </span>
+      <div class="clearBoth"></div>
+    </li> 
+           
+    <li>
+    <span class="leftLabel"> Contact Name</span>
+      <span class="contactNameInputBox">
+      <% if $woDefault!= nil && ($woDefault.WO_Status != "New" && $woDefault.WO_Status != "Open") %>
+        <input type='text' id='contact_nameClosed' name='contact_name' value="<%= $woDefault.WO_ContactName %>" disabled="disabled">
+      <% else %>
+        <input type='text' id='contact_name' name='contact_name' value="" onkeyup="setValuesOnChange(this)" onfocus="focusIn(phone,platform,this.id)" onfocusout="focusOut(phone,platform)">
+      <% end %>
+      </span>
+    </li>
+
+    <li>
+    <span class="leftLabel"> Acknowledgement of Service</span>
+     <span>
+        <% if $woDefault!= nil && (($woDefault.WO_Status != "New" && $woDefault.WO_Status != "Open") || $woDefault.WO_ContactSignaturePath != "") %>
+          <img src='<%= $woDefault.WO_ContactSignaturePath %>' height='150px' width='55%'/>
+        <% else %>
+          <div id="signaturebcg"><input type="button" id="signature_capture" value="Take Signature" onclick="take_signature()"></div>
+        <% end %>
+     </span>  
+    </li>
+
+    </ul>
+    <% if $woDefault!= nil && ($woDefault.WO_Status != "New" && $woDefault.WO_Status != "Open") %>
+      <INPUT type="button" id="id_button_clear" data-inline="true" value="Clear" name="id_button_clear" onClick="onClear();" disabled="disabled">
+    <% else %>
+      <INPUT type="button" id="id_button_clear" data-inline="true" value="Clear" name="id_button_clear" onClick="onClear();">
+    <% end %>
+    <div class="floatRight">
+    <INPUT type="button" id="id_button_print" data-inline="true" value="Print Receipt" name="id_button_print">
+    </div>
+    <% if $woDefault != nil  %>
+      <input type = "hidden" id="wo_id" value="<%= $woDefault.WO_Id %>" />
+    <% end %>
+<section style="height:150px;">
+ </section>
+  </section>
+  <% if !$phone && orientation == "landscape" %>
+    <div data-role="footer" data-position="fixed" class="footerPartial">
+  <% else %>
+    <div data-role="footer" data-position="fixed" class="footerFull">
+  <% end %>
+      <div data-role="navbar">
+        <ul>
+          <% if $woDefault != nil  %>
+            <li><a href="javascript:changeTab('Details');" id="detailsTab" class="ui-state-persist activeTab"><img src="/public/images/FSM/footerDetail.png" /><div>Details</div></a></li>
+            <li><a href="javascript:changeTab('Photos');" id="photosTab" class="ui-state-persist"><img src="/public/images/FSM/footerPhotos.png" /><div>Photos</div></a></li>
+            <li><a href="javascript:changeTab('Parts');" id="partsTab" class="ui-state-persist"><img src="/public/images/FSM/footerParts.png" /><div>Parts</div></a></li>
+            <li><a href="javascript:changeTab('Account')" id="accountTab" class="ui-state-persist"><img src="/public/images/FSM/footerAccount.png" /><div>Account</div></a></li>
+            <li><a href="javascript:changeTab('Close')" id="closeTab" class="ui-state-persist"><img src="/public/images/FSM/footerClose.png" /><div>Close</div></a></li>
+          <% else %>
+              <li><a href="javascript:void(0);" id="detailsTab" class="ui-state-persist activeTab"><img src="/public/images/FSM/footerDetail.png" /><div>Details</div></a></li>
+              <li><a href="javascript:void(0);" id="photosTab" class="ui-state-persist"><img src="/public/images/FSM/footerPhotos.png" /><div>Photos</div></a></li>
+              <li><a href="javascript:void(0);" id="partsTab" class="ui-state-persist"><img src="/public/images/FSM/footerParts.png" /><div>Parts</div></a></li>
+              <li><a href="javascript:void(0);" id="accountTab" class="ui-state-persist"><img src="/public/images/FSM/footerAccount.png" /><div>Account</div></a></li>
+              <li><a href="javascript:void(0);" id="closeTab" class="ui-state-persist"><img src="/public/images/FSM/footerClose.png" /><div>Close</div></a></li>
+          <% end %>
+        </ul>
+      </div>
+  </div>
+  

@@ -1,0 +1,120 @@
+<script src="/public/js/FSM/WOlist.js" type="text/javascript"></script>
+
+<% if !$phone && orientation == "landscape" %>
+  <header data-role="header" data-position="inline" class="headerPartial">
+<% else %>
+  <header data-role="header" data-position="inline" class="headerFull">
+<% end %>
+    <h1>My Work Order (<%= $woValue.count%>)</h1>
+    
+    
+    
+  </header>
+  <% if !$phone && orientation == "landscape" %>
+    <section class="calenderBox" id="calenderBoxPartial">
+  <% else %>
+    <section class="calenderBox" id="calenderBoxFull">
+  <% end %>
+      
+    <% if @date != "search" 
+      $displayDate = Date.today.strftime('%a, %m %d, %Y').to_s
+     end %>
+     
+      <a href="<%= url_for(:action => :fetch_DateDetails, :query => {'status' => $displayDate,'value' => 'left','page' => 'main'}) %>" id="leftDate" ><img src="/public/images/FSM/calenderArrowLeft.png"  class="leftBtn" /></a>
+      <a href="<%= url_for(:action => :fetch_DateDetails, :query => {'status' => $displayDate,'value' => 'right','page' => 'main'}) %>" id="rightDate" ><img src="/public/images/FSM/calenderArrowRight.png"  class="rightBtn" /></a>
+      <span id="date"><%= $displayDate %></span>
+  </section>
+  
+  <% if !$phone && orientation == "landscape" %>
+    <div data-role="content" id="contentCntrPartial">
+  <% else %>
+    <div data-role="content" id="contentCntrFull">
+  <% end %>
+    <ul data-role="listview" id="workOrderList">      
+        <% count = 0 
+          if $woValue == [] 
+            $woDefault = nil
+            %>
+            <section class="noWorkOrder">
+              No Work Orders
+            </section>
+          <% else %>
+            
+              <% $woValue.each do
+                stdTime = $woValue[count].WO_CreatedTime
+                hours = get_formatted_hours(stdTime)
+                c_address = find_select_customer($woValue[count].C_Id)
+                id = $woValue[count].WO_Id
+                %>
+                <% if $woValue[count].WO_Status == "New" %>
+                <li class="workOrderListLiNew" id="WO_<%= id %>"> 
+              <% elsif $woValue[count].WO_Status == "Open" %>
+                <li class="workOrderListLiOpened" id="WO_<%= id %>">
+              <% else %>
+                <li class="workOrderListLiClosed" id="WO_<%= id %>">
+              <% end %>
+
+              <section class="wrapSection">
+                <a href="<%= url_for(:action => :fetchDetails, :query => {'status' => $woValue[count].WO_Id}) %>" id="detail<%= count%>" style="display: block; overflow: hidden; margin-right: 30px">
+                <section class="listLeftPanel">
+                  <p><%= hours %> </p>
+                  <p><%= c_address[0].C_Name %></p>  
+                  <p><%= c_address[0].C_Address %></p>
+                </section>
+                
+                <section class="listRightPanel">
+                  <p id="wo_<%= count%>"><%= $woValue[count].WO_Id %></p>
+                  <p><%= $woValue[count].WO_Type %></p>
+                  <p><%= $woValue[count].WO_Status %></p>
+                </section>
+                
+                <section>
+                  <img src="/public/images/FSM/listArrow.png" class="arrow" />
+                </section>
+                </a>
+                
+                <a href="<%= url_for(:action => :direction, :query => {'count' => count, 'Header' => 'My Work Order'}) %>"><img src="/public/images/FSM/listMapIcon.png"  class="listMapIcon" /></a>
+                
+              </section>
+              
+          </li>
+          
+          <% 
+             count = count + 1
+            end 
+          end
+          %>     
+
+    </ul>
+    
+  </div>
+
+  <% if !$phone && orientation == "landscape" %>
+    <div data-role="footer" data-position="fixed" class="footerPartial">
+  <% else %>
+    <div data-role="footer" data-position="fixed" class="footerFull">
+  <% end %>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#" id="logoutBtn" class="ui-state-persist" onclick="logout();"><img src="/public/images/FSM/logOut.png" /><div>Logout</div></a></li>
+          <li><a href="<%= url_for(:controller => :Customer, :action => :createWO) %>" class="ui-state-persist"><img src="/public/images/FSM/footerCreateWo.png" /><div>Create WO</div></a></li>
+          <li><a href="<%= url_for(:action => :map_view, :query => {'date' => $displayDate}) %>" class="ui-state-persist"><img src="/public/images/FSM/footerMap.png" /><div>Map</div></a></li>
+        </ul>
+      </div>
+  </div>
+<script>
+  $(document).ready(function() {
+    <% if $woDefault != nil %>
+      val = "<%= $woDefault.WO_Id %>";
+      document.getElementById("WO_"+val).style.border = '2px solid red';
+      var ele_height = $('#WO_'+val+'').offset().top
+      var win_height = $(window).height() - 50
+      if(ele_height > win_height)
+      {
+        $('html, body').animate({
+           'scrollTop':   $('#WO_'+val+'').offset().top
+         }, 2000);
+      }
+    <% end %>
+    });
+</script>

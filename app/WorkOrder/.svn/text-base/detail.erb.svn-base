@@ -1,0 +1,38 @@
+<% $page = "detail" %>
+<div data-role="page"> 
+<input type="hidden" id="pageValue" value="<%= @pageValue %>" />
+<input type="hidden" id="partcodeValue" value="<%= @partcodeValue %>" />
+<input type="hidden" id="serialcodeValue" value="<%= @seriacodeValue %>" />
+<input type="hidden" id="partcodeboxVal" value="<%= @partcodeboxVal %>" />
+<input type="hidden" id="serialcodeboxVal" value="<%= @serialcodeboxVal %>" />
+<input type="hidden" id="checkValue" value="<%= @checkValue %>" />
+<div id="signatureCover">
+  <% if $phone && platform == "APPLE" && orientation == "portrait" %>
+    <div class="signature_buttonsportraitIPhone">
+  <%elsif $phone && platform == "APPLE" && orientation == "landscape" %>
+    <div class="signature_buttonslandscapeIPhone">
+  <% elsif orientation == "landscape" %>
+    <div class="signature_buttonslandscape">
+  <% else %>
+   <div class="signature_buttonsPortrait">
+  <% end %>
+     <table width="70%" cellpadding="0" cellspacing="0" style="margin: 0px auto;">
+      <tr>
+        <td align="center">
+            <a href="#" onclick="close_signature()"><img src='/public/images/FSM/close.png' height="40px" width="40px"/></a>
+        </td>
+        <td align="center">
+            <a href="#" onclick="clear_sign()"><img src='/public/images/FSM/clear.png' height="40px" width="40px"/></a>
+        </td>
+        <td align="center">
+            <a href="#" onclick="capture_sign()"><img src='/public/images/FSM/done.png' height="40px" width="40px"/></a>
+        </td>
+      </tr>
+     </table>
+   </div>
+ </div>
+    <section>
+      <%= render :partial => 'detail' %>  
+    </section>
+</div>
+

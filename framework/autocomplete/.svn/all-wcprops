@@ -1,0 +1,713 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete
+END
+Push.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Push.rb
+END
+Keylight.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Keylight.rb
+END
+RhodesNativeViewManager.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RhodesNativeViewManager.rb
+END
+Rfid.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Rfid.rb
+END
+Rhodes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Rhodes.rb
+END
+SignatureCapture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/SignatureCapture.rb
+END
+ZoomTextButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/ZoomTextButton.rb
+END
+Wake.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Wake.rb
+END
+IoAnalog.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/IoAnalog.rb
+END
+RhoProfiler.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RhoProfiler.rb
+END
+Alarm.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Alarm.rb
+END
+SignatureTool.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/SignatureTool.rb
+END
+TCPSocket.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/TCPSocket.rb
+END
+RHO_ERB_EXT.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RHO_ERB_EXT.rb
+END
+History.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/History.rb
+END
+Rsm.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Rsm.rb
+END
+Bsearch.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Bsearch.rb
+END
+Memory.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Memory.rb
+END
+JSON.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/JSON.rb
+END
+IoSystem.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/IoSystem.rb
+END
+MinimizeButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/MinimizeButton.rb
+END
+QuitButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/QuitButton.rb
+END
+Gesture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Gesture.rb
+END
+Dir.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Dir.rb
+END
+RhoBluetooth.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RhoBluetooth.rb
+END
+StringScanner.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/StringScanner.rb
+END
+Phonebook.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Phonebook.rb
+END
+Zoom.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Zoom.rb
+END
+Camera.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Camera.rb
+END
+Network.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Network.rb
+END
+GeneratorController.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/GeneratorController.rb
+END
+VideoCapture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/VideoCapture.rb
+END
+DateTimePicker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/DateTimePicker.rb
+END
+RHO_RB_EXT.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RHO_RB_EXT.rb
+END
+ScreenOrientation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/ScreenOrientation.rb
+END
+MediaPlayer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/MediaPlayer.rb
+END
+LocalizationSimplified.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/LocalizationSimplified.rb
+END
+RhoConf.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RhoConf.rb
+END
+ScanError.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/ScanError.rb
+END
+GoButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/GoButton.rb
+END
+UDPSocket.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/UDPSocket.rb
+END
+ReloadButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/ReloadButton.rb
+END
+Application.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Application.rb
+END
+GeoLocation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/GeoLocation.rb
+END
+Stylus.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Stylus.rb
+END
+ZoomInPageButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/ZoomInPageButton.rb
+END
+IoDigital.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/IoDigital.rb
+END
+Rhom.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Rhom.rb
+END
+ZoomOutPageButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/ZoomOutPageButton.rb
+END
+Hourglass.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Hourglass.rb
+END
+Alert.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Alert.rb
+END
+Thread.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Thread.rb
+END
+Registry.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Registry.rb
+END
+SWIG.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/SWIG.rb
+END
+AddressBar.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/AddressBar.rb
+END
+Telemetry.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Telemetry.rb
+END
+NativeBar.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/NativeBar.rb
+END
+EmmlProfile.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/EmmlProfile.rb
+END
+KeyCapture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/KeyCapture.rb
+END
+Date.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Date.rb
+END
+TCPServer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/TCPServer.rb
+END
+File.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/File.rb
+END
+IPSocket.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/IPSocket.rb
+END
+StopButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/StopButton.rb
+END
+FileTransfer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/FileTransfer.rb
+END
+System.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/System.rb
+END
+Notification.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Notification.rb
+END
+Eink.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Eink.rb
+END
+Backlight.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Backlight.rb
+END
+Rho.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Rho.rb
+END
+Scanner.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Scanner.rb
+END
+BasicSocket.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/BasicSocket.rb
+END
+TopCommandArea.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/TopCommandArea.rb
+END
+Comm.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Comm.rb
+END
+Sip.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Sip.rb
+END
+BottomCommandArea.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/BottomCommandArea.rb
+END
+BackButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/BackButton.rb
+END
+CardReader.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/CardReader.rb
+END
+DateTime.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/DateTime.rb
+END
+Time.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Time.rb
+END
+ForwardButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/ForwardButton.rb
+END
+Wlan.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Wlan.rb
+END
+SystemTime.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/SystemTime.rb
+END
+Imager.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Imager.rb
+END
+AppApplication.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/AppApplication.rb
+END
+RHO_FRAMEWORK.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RHO_FRAMEWORK.rb
+END
+RawSensors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RawSensors.rb
+END
+RhoElementsExt.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RhoElementsExt.rb
+END
+Volume.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Volume.rb
+END
+MapView.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/MapView.rb
+END
+WebView.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/WebView.rb
+END
+NavBar.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/NavBar.rb
+END
+Battery.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Battery.rb
+END
+HashWithIndifferentAccess.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/HashWithIndifferentAccess.rb
+END
+Digest.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Digest.rb
+END
+Timer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Timer.rb
+END
+OpenSSL.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/OpenSSL.rb
+END
+BrowserHelper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/BrowserHelper.rb
+END
+HomeButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/HomeButton.rb
+END
+SQLite3.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/SQLite3.rb
+END
+Sntp.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Sntp.rb
+END
+AudioCapture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/AudioCapture.rb
+END
+SipButton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/SipButton.rb
+END
+Socket.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Socket.rb
+END
+PowerOn.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/PowerOn.rb
+END
+KeyState.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/KeyState.rb
+END
+AppSwitcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/AppSwitcher.rb
+END
+Cradle.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Cradle.rb
+END
+Reboot.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Reboot.rb
+END
+RhoLog.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RhoLog.rb
+END
+RhoStdout.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RhoStdout.rb
+END
+StringIO.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/StringIO.rb
+END
+Barcode.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Barcode.rb
+END
+Device.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Device.rb
+END
+Lightsensor.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/Lightsensor.rb
+END
+SocketError.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/SocketError.rb
+END
+SyncEngine.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/SyncEngine.rb
+END
+RHO_APPS_DIR.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/autocomplete/RHO_APPS_DIR.rb
+END

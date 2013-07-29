@@ -1,0 +1,20 @@
+[
+{"Parts_Id" : 1,"Parts_Name" : "Compressor","Parts_Number" : 11111111,"Parts_SerialNumber" : 1111111111},
+{"Parts_Id" : 2,"Parts_Name" : "Gas Pipe","Parts_Number" : 11111112,"Parts_SerialNumber" : 1111111112},
+{"Parts_Id" : 3,"Parts_Name" : "Shed Bolts","Parts_Number" : 11111113,"Parts_SerialNumber" : 1111111113},
+{"Parts_Id" : 4,"Parts_Name" : "Regulator","Parts_Number" : 11111114,"Parts_SerialNumber" : 1111111114},
+{"Parts_Id" : 5,"Parts_Name" : "Exhaust Fan","Parts_Number" : 11111115,"Parts_SerialNumber" : 1111111115},
+{"Parts_Id" : 6,"Parts_Name" : "Sealing Fan","Parts_Number" : 11111116,"Parts_SerialNumber" : 1111111116},
+{"Parts_Id" : 7,"Parts_Name" : "Capacitor","Parts_Number" : 11111117,"Parts_SerialNumber" : 1111111117},
+{"Parts_Id" : 8,"Parts_Name" : "Power IC","Parts_Number" : 11111118,"Parts_SerialNumber" : 1111111118},
+{"Parts_Id" : 9,"Parts_Name" : "Charger","Parts_Number" : 11111119,"Parts_SerialNumber" : 1111111119},
+{"Parts_Id" : 10,"Parts_Name" : "Battery 100v","Parts_Number" : 11111120,"Parts_SerialNumber" : 1111111120},
+{"Parts_Id" : 11,"Parts_Name" : "Mouse","Parts_Number" : 11111121,"Parts_SerialNumber" : 1111111121},
+{"Parts_Id" : 12,"Parts_Name" : "CPU Fan","Parts_Number" : 11111122,"Parts_SerialNumber" : 1111111122},
+{"Parts_Id" : 13,"Parts_Name" : "DVD Rom","Parts_Number" : 11111123,"Parts_SerialNumber" : 1111111123},
+{"Parts_Id" : 14,"Parts_Name" : "Lens Shutter","Parts_Number" : 11111124,"Parts_SerialNumber" : 1111111124},
+{"Parts_Id" : 15,"Parts_Name" : "Lens Cleaner","Parts_Number" : 11111125,"Parts_SerialNumber" : 1111111125},
+{"Parts_Id" : 16,"Parts_Name" : "Modem Connexant 1.04","Parts_Number" : 11111126,"Parts_SerialNumber" : 1111111126},
+{"Parts_Id" : 17,"Parts_Name" : "Headphones","Parts_Number" : 11111127,"Parts_SerialNumber" : 1111111127},
+{"Parts_Id" : 18,"Parts_Name" : "5.1 Speakers","Parts_Number" : 11111128,"Parts_SerialNumber" : 1111111128}
+]

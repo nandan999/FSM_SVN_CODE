@@ -1,0 +1,12 @@
+[
+{"C_Id" : "1", "C_Name" : "Acme Supply","C_ServiceHours" : "M-F 6am-10pm","C_Contact" : "2433245455","C_Address" : "13578 Larch RD, Hesperia, CA, 92344"},
+{"C_Id" : "2", "C_Name" : "Acme Supply","C_ServiceHours" : "M-F 6am-11pm","C_Contact" : "3434545454","C_Address" : "902 Barbra LN, Redlands, CA, 92374"},
+{"C_Id" : "3", "C_Name" : "J&H Foundries","C_ServiceHours" : "M-F 7am-10pm","C_Contact" : "4545794689","C_Address" : "1320 Mona Ave, Redlands, CA, 92374"},
+{"C_Id" : "4", "C_Name" : "J&H Foundries","C_ServiceHours" : "M-F 6am-10pm","C_Contact" : "3435667356","C_Address" : "18784 Rocksprings RD, Hesperia, CA, 92345"},
+{"C_Id" : "5", "C_Name" : "J&H Foundries","C_ServiceHours" : "M-F 6am-9pm","C_Contact" : "3445673424","C_Address" : "15136 Ackerman DR, Fontana, CA, 92335"},
+{"C_Id" : "6", "C_Name" : "Simson Lighting","C_ServiceHours" : "M-F 6am-10pm","C_Contact" : "3445667567","C_Address" : "76 N Buena Vista ST, Redlands, CA, 92373"},
+{"C_Id" : "7", "C_Name" : "Simson Lighting","C_ServiceHours" : "M-F 7am-10pm","C_Contact" : "3456678896","C_Address" : "345 D ST, Upland, CA, 91786"},
+{"C_Id" : "8", "C_Name" : "Simson Lighting","C_ServiceHours" : "M-F 6am-9pm","C_Contact" : "3454656565","C_Address" : "I 15, Victorville, CA, 92394"},
+{"C_Id" : "9", "C_Name" : "Simson Lighting","C_ServiceHours" : "M-F 6am-10pm","C_Contact" : "1232364564","C_Address" : "11113 Cypress Ave, Fontana, CA, 92337"},
+{"C_Id" : "10", "C_Name" : "Avon Lighting","C_ServiceHours" : "M-F 7am-11pm","C_Contact" : "2345678963","C_Address" : "1690 W Cypress Ave, Redlands, CA, 92373"}
+]

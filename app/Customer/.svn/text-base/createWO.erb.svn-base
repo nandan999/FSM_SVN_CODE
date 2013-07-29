@@ -1,0 +1,82 @@
+<script src="/public/js/FSM/CreateWO.js" type="text/javascript"></script>
+
+<div data-role="page">
+
+  <header data-role="header" data-position="inline" class="headerFull">
+    
+      <% if platform == 'APPLE' %>
+		<h1>Create Work Order</h1>
+        <a href="<%= url_for(:controller => :WorkOrder, :action => :list, :query => {'wo_click' => 'true'}) %>" class="ui-btn-left">Back</a>
+		<a href="javascript:createWO()" class="ui-btn-right">Done</a>
+	<% elsif platform == 'ANDROID' %>
+        <h2>Create Work Order</h2>
+        <a href="javascript:createWO()" id="headerButtonAndroid" class="ui-btn-right">Done</a>
+      <% end %>
+  </header>
+
+  <div data-role="content" class="detailCntrFull">
+  <section class="createWorkOrderFields">
+        <div data-role="fieldcontain">
+          <label for="customer">Customer</label>
+            <select class="itemValue" id="WO_customer" onchange="C_nameChange(this);">
+              <option value="-1" selected="selected"><--Select--></option>
+              <% c_name = []
+               @customers.each do |customer|
+                c_name << customer.C_Name
+              end
+
+              c_name = c_name.uniq
+              c_name.each do |name| %>
+                <option value="<%= name %>"><%= name %></option>
+              <% end %>
+            </select>
+        </div>
+        <div data-role="fieldcontain">
+          <label for="location">Location</label>
+          <select class="itemValue" id="WO_loc" onchange="dropdown_change(this);">
+            <option value="-1" selected="selected"><--Select--></option>
+          </select>
+        </div>
+        <div data-role="fieldcontain">
+          <label for="workOrderType">Work Order Type</label>
+          <select class="itemValue" id="WO_type" onchange="dropdown_change(this);">
+            <option value="-1" selected="selected"><--Select--></option>
+            <option value="Install">Install</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Repair">Repair</option>
+            <option value="Service">Service</option>
+          </select>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="description">Description</label><br />
+            <textarea id="textArea" onkeyup="desc_change(this);" onfocus="focusIn(phone,platform,this.id)" onfocusout="focusOut(phone,platform,this.id)"></textarea>
+        </div>
+        <div id="clearButton">
+            <input type="button" value="Clear" onclick="clearFieldsCreateWO();"/>
+        <div>
+  </section>
+  </div>
+
+</div>
+
+<script>
+$(document).ready(function() {
+  phone = "<%= $phone %>";
+  platform = "<%= platform %>";
+  <% if @params["orientation_change"] == "true" %>
+    WO_cust = "<%= $values['WO_customer'] %>";
+    Wo_loc = <%= $values['WO_loc'].to_i %>;
+    Wo_type = "<%= $values['WO_type'] %>";
+    textarea = "<%= $values['textArea'] %>";
+    var customer = document.getElementById("WO_customer");
+    var location = document.getElementById("WO_loc");
+    var type = document.getElementById("WO_type");
+    
+    setDropDownList(customer, WO_cust);
+    C_nameChange(customer);
+    setTimeout(function(){setDropDownList(location, Wo_loc);},300);
+    setDropDownList(type, Wo_type);
+    document.getElementById("textArea").innerHTML = textarea;
+  <% end %>
+ });
+</script>

@@ -1,0 +1,131 @@
+* { margin: 0px; padding: 0px; }
+
+input, textarea { background: #fff!important; }
+#formLogin .loginLbl {font-size:20px;}
+/*.content1{background-image: url('/public/images/FSM/bodyBg.png');}*/
+
+
+.previousButton { margin:15px 0px; text-align:center;}
+.floatRight { float: right; }
+.floatLeft { float: left; }
+.clearBoth { clear: both; height: 0px; }
+
+.custadd {float:left;white-space:pre-wrap; font-size: 16px; font-weight: normal; width: 90%;}
+.mapview {float:right;}
+
+.statusLbl { float:left; margin-top:20px; }
+.closedOptSec { float:left; margin-left:80px;}
+
+.noWorkOrder {height:100px; width:100%; background-color:grey; text-align:center; padding-top:50px;}
+
+
+	/*/###	LOGIN 	###\*/
+	
+	#loginCntr { padding: 1px 1px 25px 1px; background: #f7c31e; border-radius: 20px; overflow: hidden; margin-top: 10%;}
+	.loginBox { padding: 12px; }
+	.triangle { position: relative; background:#fff url(/public/images/FSM/loginPanelMobile.png) 50% 100% no-repeat; height: 100px; text-align: center; border-top-left-radius:20px; border-top-right-radius:20px;  }
+	.triangle .yellow { width: 100%; height: 35px; background: #f7c31e url(/public/images/FSM/loginPanelMobile.png) 50% 100% no-repeat; position: absolute; bottom: 0px; }
+	.img { width: 180px; margin-top: 20px; }
+	#remember1 { width: 100%; padding-top: 20px; }
+	#remember1 .loginLbl { float: left; margin-top: 10px; }
+	.btnBox { text-align: center; padding-top: 10px; }
+	.ui-btn-up-c { background: -moz-linear-gradient(top,  #015f9e,  #012944 50%); background: -webkit-gradient(linear, left top, left bottom, from(#015f9e),to(#012944)); color : #fff; text-shadow: none; }
+	.ui-select { width: 101%; margin: 0px; }
+	.ui-select .ui-btn { text-align: left!important; }
+	
+	.ui-btn-up-c a.ui-link-inherit { color:#3D474C!important; }
+	
+	#textArea { width: 98%; margin: 0px; border-radius: 10px; background: #fff!important; overflow:auto!important; height:60px!important; }
+	
+	/*\###	LOGIN 	###/*/
+	.calenderBox { width: 100%; color: #003e68; text-align: center; line-height: 35px; text-transform: capitalize; text-shadow: none; height: 40px; background: -moz-linear-gradient(top,  #ffffff,  #dee6f1 50%); background: -webkit-gradient(linear, left top, left bottom, from(#ffffff),to(#dee6f1)); }
+	.calenderBox .leftBtn { float: left; margin-top: 3px; }
+	.calenderBox .rightBtn { float: right; margin-top: 3px; }
+	#workOrderList p { line-height: 20px; }
+	#workOrderList .listMapIcon { top: 50%; left: 5px; margin-top: -17px; position: absolute; }
+	#workOrderList .listLeftPanel { float: left; width: 120px; }
+	#workOrderList .listRightPanel { float: left; margin-left: 25px; }
+	#workOrderList .arrow { padding: 10px; position: absolute; right: 5px; top: 50%; margin-top: -20px; }
+	#workOrderList li .wrapSection {width: 100%; overflow: hidden; margin-left: 35px;}
+	
+	#workOrderButtonTop { margin-top: 3px; }
+	
+	.workOrderDetailDescription { display: block; margin-top: 5px; }
+	
+	#headerButton { margin-top: 3px; height: 30px; }
+	#headerButtonAndroid { height: 38px; font-size:17px; width: 100px; top:4px; }
+	#clearButton { margin : 0 auto; width : 175px;}
+	
+	#workOrderPopUpCover { height: 100%; width: 100%; position: fixed; z-index: 9999; background: rgba(0, 0, 0, .4); display: none;top:0px; }
+	#workOrderPopUp { padding: 5px; width: 70%; background: #fff; position: absolute; top: 60px; left: 20px; border-radius: 10px; overflow:auto; }
+	#displayWorkOrderPopUpCover { height: 100%; width: 100%; position: absolute; z-index: 9999; background: rgba(0, 0, 0, .4); display: block; top:0px; }
+	.leftSection { width: 50%; float: left; border-right:1px solid black; }
+	.rightSection { width: 50%; position: fixed; right: 0px; }
+	.createWorkOrderFields div label {color:white;}
+	
+	#signatureCover { height: 100%; width: 100%; position: fixed; z-index: 9999; background: rgba(0, 0, 0, .4); display: none; top:0px; }
+	.signature_buttonsPortrait { position: fixed; bottom: 15%; width: 100%; }
+	.signature_buttonslandscape { position: fixed; bottom: 22%%; width: 100%; }
+	.signature_buttonsportraitIPhone { position: fixed; bottom: 11%; width: 100%; }
+	.signature_buttonslandscapeIPhone { position: fixed; bottom: 18%; width: 100%;}
+ 
+	/*    PHOTOS---------------------                                        */
+	.belowButton { margin : 0 auto; width : 175px;}
+	.topButtons {margin-top:3px!important;}
+	.sectionHidden {display:none;}
+	.sectionVisible {display:inline;}
+	.sectionVisibleBlock{display:block;}
+	#photoPopUpCover { height: 100%; width: 100%; position: absolute; z-index: 9999; background: rgba(0, 0, 0, .4); display: none; }
+	#photoPopUp { width:300px;height:300px;border:1px solid white; margin-top:30%; }
+	#photoCover { width: 100%; height:100%; background: rgba(0, 0, 0, .4); position: absolute; border-radius: 10px; overflow:auto;text-align:center; }
+	#photoCover .closeBtn { position:relative;left:0px;top:0px;height:30px;width:30px; }
+	.photosImage { position:absolute; top:15px; width:50px; height:50px;}
+	.photosImageLeft {left:20px; }
+	.photosImageRight {left:60px; }
+	.photosDate { position:absolute;top:15px; }
+	.photosDateTimeLeft {left:90px;}
+	.photosDateTimeRight { left:130px;}
+	.photosTime { position:absolute;top:40px; }
+	#photosList li{ background-size: 100% 100%;border-width:initial;border-color:initial;background-image:none;background-attachment:initial;background-origin:initial;background-clip:initial;background-color:initial;color:rgb(61,71,76);text-shadow:none;border:none;}
+	input[type=checkbox]{-webkit-transform: scale(2);}
+	.photoNext{position:absolute;right:10px;bottom:10px;color:#2489CE;font-weight:bold;}
+	.photoPrevious{position:absolute;right:10px;top:10px;color:#2489CE;font-weight:bold;}
+	.activeTab{border-color: rgb(21, 86, 120);text-shadow: rgb(20, 80, 114) 0px -1px 1px; background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(85, 88, 95)), color-stop(0.49, rgb(85, 88, 95)), color-stop(0.5, rgb(56, 58, 64)), to(rgb(56, 58, 64)));}
+	.leftLabel{font-weight:bold;}
+	.minusIconPhotos{ position:absolute;left:13px;top:30%;}
+	.detailCntrPartial{margin-top:55px;padding:15px;padding-bottom:0px;}
+	.detailCntrFull{margin-top:55px;padding:15px;padding-bottom:0px;}
+	.rightRoundPanel{background:#fff;margin:0px;border-radius:10px;border:1px solid #ccc;}
+	.rightRoundPanel li{border:none;background:none;color:#3d474c;text-shadow:none;border-bottom:1px solid #cacaca!important;}
+        .rightRoundPanel li:last-child{border-bottom:0px!important; }	
+	/*    Parts-----------------------------------  */ 
+	#partIcon {top:40%;margin-top:-15px;left:4%;position:relative;float:left;}
+	.partDisplayList {float:left; margin-left: 10%;font-family: Droid, sans-serif;font-weight: normal;padding-top:5px;}
+	#partNumber {padding-bottom:10px;}
+	#serialShow{margin-top:20px;}
+	#serialNumber{padding-bottom:10px;}
+	#partNumberInputBox{margin-left:-25px;margin-top:10px;width:159%}
+	#serialNumberInputBox{margin-left:-25px;margin-top:10px;width:159%;padding-bottom:5px;}
+	.partInputBoxes {background:#fff!important;color:black;}
+	#clearBtn{float:left;width:125px;padding-left:15%;}
+	#scanBtn{float:right;width:125px;padding-right:15%;}
+	#listView{height:60px;font-size:12px;font-family: Droid, sans-serif;font-weight: normal;}
+    #deleteIcon {float:left;position:relative;top:15%;margin-left:-10px;}
+    .partList{background-size: 100% 100%; border-top-style: none; border-right-style: none; border-left-style: none; border-width: initial; border-color: initial; background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; color: rgb(61, 71, 76); text-shadow: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(202, 202, 202); background-position: initial initial; background-repeat: initial initial;font-size:12px;font-family: Droid, sans-serif;font-weight: normal;}
+    .partUL{background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255); margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-left-radius: 10px 10px; border-top-right-radius: 10px 10px; border-bottom-right-radius: 10px 10px; border-bottom-left-radius: 10px 10px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); background-position: initial initial; background-repeat: initial initial;}  
+	
+    @media only screen and (min-width : 768px) {
+	#loginCntr { padding: 1px 1px 1px 1px; margin-top: 3%; }
+	.triangle { position: relative; background:#fff; text-align: center; border-top-right-radius:0px; border-bottom-left-radius:20px; width: 238px; float: left; height: 300px; }
+	.triangle .yellow { width: 37px; height: 300px; background: #f7c31e url(/public/images/FSM/leftPanelBg.png) 100% 50% no-repeat; right: 0px; }
+	.img { width: 180px; margin-top: 120px; }
+	#photoPopUp { width:300px;height:300px;border:1px solid white; margin-top:10%; }
+	.loginBox { float: left; width: 50%; margin-left: 50px; }
+	.createWorkOrderFields { width: 70%; margin: 0px auto; }
+}
+
+#parts input { color: #3D474C; text-shadow: none; }
+.closedOptSec .ui-select { width: 250px!important; }
+.closedOptSecIphone .ui-select { width: 180px!important; }
+#contact_name { width: 225px!important; color:black;}	
+#contact_nameClosed { width: 225px!important;}

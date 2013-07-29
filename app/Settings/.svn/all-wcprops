@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/Mobile-Application/!svn/ver/2346/POC/RHO/FieldServiceManagement/app/Settings
+END
+home.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/home.erb
+END
+login.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/login.erb
+END
+index.bb.erb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/index.bb.erb
+END
+home.bb.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/home.bb.erb
+END
+login.bb.erb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/login.bb.erb
+END
+controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/Mobile-Application/!svn/ver/2346/POC/RHO/FieldServiceManagement/app/Settings/controller.rb
+END
+reset.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/reset.erb
+END
+err_sync.erb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/err_sync.erb
+END
+reset.bb.erb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/reset.bb.erb
+END
+wait.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/wait.erb
+END
+wait.bb.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/wait.bb.erb
+END
+index.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Mobile-Application/!svn/ver/2188/POC/RHO/FieldServiceManagement/app/Settings/index.erb
+END

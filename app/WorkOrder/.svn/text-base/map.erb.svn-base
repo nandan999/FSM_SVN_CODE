@@ -1,0 +1,267 @@
+<link rel="stylesheet" href="/public/css/esri.css">
+
+<% $page = "map" %>
+<div data-role="page" id="map">
+  <header data-role="header" data-position="inline" class="headerMap">
+    <% if $mapValues['pageValue'].include?("Direction") 
+       if platform == 'APPLE' %>
+        <h2>Direction</h2>
+      <% elsif platform == 'ANDROID' %>
+        <h1>Direction</h1>
+      <% end 
+       if $mapValues['pageValue'].include?("WO") %>
+        <a href="<%= url_for(:controller => :WorkOrder, :action => :list, :query => {'wo_click' => 'true'}) %>" class="ui-btn-left">Back</a>
+        <% elsif $mapValues['pageValue'].include?("AC")
+          if !$phone %>
+        <a href="<%= url_for(:controller => :WorkOrder, :action => :to_account, :query => {'wo_click' => 'true'}) %>" class="ui-btn-left">Back</a>
+          <% elsif $phone %>
+            <a href="<%= url_for(:controller => :WorkOrder, :action => :detail) %>" class="ui-btn-left">Back</a>
+           <% end
+      end
+
+    else
+      if platform == 'APPLE' %>
+        <h2><%= $mapValues['pageValue'] %></h2>
+        <a href="<%= url_for(:controller => :WorkOrder, :action => :list, :query => {'wo_click' => 'true'}) %>" class="ui-btn-left">Back</a>
+      <% elsif platform == 'ANDROID' %>
+        <h1><%= $mapValues['pageValue'] %></h1>
+      <% end
+     end %>
+
+    </header>
+</div>
+
+<script>var dojoConfig = { parseOnLoad: true };</script>
+<script src="/public/js/map.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script>
+
+  dojo.require("esri.map");
+  dojo.require("esri.tasks.locator");
+  dojo.require("esri.tasks.route");
+  dojo.require("esri.utils");
+  dojo.require("dojo.DeferredList");
+  dojo.require("dgrid.Grid");
+  var map, locator, routeTask, routeParams = [], segmentGraphic, directionFeatures, grid,startPoint, latitude,longitude;
+  var page = "<%= $mapValues['pageValue'] %>";
+  var loc = <%= $mapValues['currentLocation'] %>;
+  var initialStop = <%= $mapValues['initialStop'] %>;
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode( { 'address': initialStop}, function(results, status) {
+
+    if (status == google.maps.GeocoderStatus.OK) {
+       latitude = results[0].geometry.location.lat();
+       longitude = results[0].geometry.location.lng();
+     } 
+   }); 
+  
+
+ function init() {
+            
+      setTimeout(getDirectionsMain, 5000); 
+         
+      //Set up the URL to the proxy page.
+      esri.config.defaults.io.proxyUrl = "/proxy";
+      
+      //Create a map with an initial extent. Change the extent to match the area you would like to show.
+    
+      if(page.indexOf("Direction") != -1)
+          map = new esri.Map("map", {basemap: "streets",center: [loc.x,loc.y],zoom: 9});
+      else
+          map = new esri.Map("map", {basemap: "streets",center: [longitude,latitude],zoom: 9});
+  
+      //Add a geocoding server as the locator. This locator will be used to find the origin and destination coordinates by input addresses.
+      locator = new esri.tasks.Locator("http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer");
+      locator.outSpatialReference = map.spatialReference;
+      if(page.indexOf("Direction") != -1)
+      {
+        var point = new esri.geometry.Point(loc.x,loc.y);  
+        locator.locationToAddress(point, 100, function(candidate)
+        {
+          startPoint = candidate.address.Address.toString() + "," + candidate.address.City.toString() + "," + candidate.address.Region.toString() + "," + candidate.address.Postal.toString();
+        });
+      }
+      
+      //Add a network analyst server with related parameters to execute the routing task.
+      routeTask = new esri.tasks.RouteTask("http://tasks.arcgisonline.com/ArcGIS/rest/services/NetworkAnalysis/ESRI_Route_NA/NAServer/Route");
+      routeParams = new esri.tasks.RouteParameters();
+      routeParams.stops = new esri.tasks.FeatureSet();
+      routeParams.returnRoutes = false;
+      routeParams.returnDirections = true;
+      routeParams.directionsLengthUnits = esri.Units.MILES;
+      routeParams.outSpatialReference = new esri.SpatialReference({ wkid:102100 });
+  
+      //Show the route when the routing task is solved successfully, otherwise fire errorHandler.
+      dojo.connect(routeTask, "onSolveComplete", showRoute);
+      dojo.connect(routeTask, "onError", errorHandler);
+    }
+    dojo.ready(init);
+
+  function getDirectionsMain()
+  {
+    var stops = new Array();
+    stops = <%= $mapValues['stops'] %>;
+    if(page.indexOf("Direction") != -1)
+    {
+      getDirections(startPoint,startPoint);
+      getDirections(startPoint,stops[0]);
+    }
+    else
+    {
+      getDirections(stops[0],stops[0]);
+      for(var i=0;i<stops.length-1;i++)
+        getDirections(stops[i],stops[i+1]);
+    }
+  }
+    
+  //Execute a routing task when clicking "get direction".
+  function getDirections(addFrom,addTo) {
+    routeParams.stops.features = [];
+
+    //Get origin address.
+    var optionsFrom = {
+      address:{"SingleLine":addFrom},
+      outFields:["Loc_name"]
+    }
+    var fromAddress = locator.addressToLocations(optionsFrom);
+
+    //Get destination address.
+    var optionsTo = {
+      address:{"SingleLine":addTo},
+      outFields:["Loc_name"],
+    }
+    var toAddress = locator.addressToLocations(optionsTo);
+
+    //Create a deferred list with the dojo.deferred objects of fromAddress and toAddress, then find the route.
+    var dList = new dojo.DeferredList([fromAddress,toAddress]);
+    dList.then(configureRoute);
+  }
+  
+   //Check if the origin and destination addresses are executed successfully
+  //and solve the routing task.
+  
+  function configureRoute(results) {
+    
+    //Configure symbols to be used for destinations and route segments.
+    var fromSymbol = new esri.symbol.PictureMarkerSymbol({
+      "angle":0,
+      "xoffset":0,
+      "yoffset":10,
+      "type":"",
+      "url":"",
+      "contentType":"",
+      "width":0,
+      "height":0
+    });
+    
+    var toSymbol = new esri.symbol.PictureMarkerSymbol({
+    "angle":0,
+    "xoffset":0,
+    "yoffset":12,
+    "type":"esriPMS",
+    "url":"/public/images/FSM/redIcon.png",
+    "contentType":"image/png",
+    "width":36,
+    "height":36
+    });
+    
+    var fromStop = getCandidate(results[0][1]);
+    if (fromStop===null) {
+      errorHandler();
+    } 
+    else {
+      var fromGraphic = new esri.Graphic(fromStop.location, fromSymbol, { address:fromStop.address });
+      routeParams.stops.features[0] = map.graphics.add(fromGraphic);
+    };
+    
+    var toStop = getCandidate(results[1][1]);
+    if (toStop===null) {
+      errorHandler();
+   } 
+   else {
+      var toGraphic = new esri.Graphic(toStop.location, toSymbol, { address:toStop.address });
+      var infoTemplate = new esri.InfoTemplate();
+      infoTemplate.setTitle("Address");
+      infoTemplate.setContent("<b>"+toStop.address+"</b>");
+      toGraphic.setInfoTemplate(infoTemplate);
+      routeParams.stops.features[1] = map.graphics.add(toGraphic);
+    };
+
+    if (fromStop!==null && toStop!==null) {
+      routeTask.solve(routeParams);
+    }
+  }
+    
+  //Handle all the coordinate candidates of the origin and destination addresses and
+  //return the candidate with the highest score.
+  
+  function getCandidate(candidates){
+      var stop = null, score = 0;
+      dojo.forEach(candidates, function(candidate){
+      if(candidate.score > score){
+       stop = candidate;
+       score = candidate.score;
+      }
+    });
+    return stop;
+  }
+  
+  //Show the result of the routing task.
+  function showRoute(solveResult) {
+    
+    var data = [];
+    if(grid) grid.refresh();
+    
+    var directions = solveResult.routeResults[0].directions;
+    directionFeatures = directions.features;
+    var routeSymbol = new esri.symbol.SimpleLineSymbol().setColor(new dojo.Color([0,0,255,0.5])).setWidth(4);
+    
+    //Add route to the map.
+    var routeGraphic = new esri.Graphic(directions.mergedGeometry, routeSymbol); 
+    map.graphics.add(routeGraphic);
+    routeGraphic.getDojoShape().moveToBack();
+    map.setExtent(directions.extent, true);
+    
+    //Display the directions.
+    var directionsInfo = solveResult.routeResults[0].directions.features;
+    var totalDistance = dojo.number.format(directions.totalLength);
+    var totalLength = dojo.number.format(directions.totalTime);
+    data = dojo.map(directionsInfo,function(feature,index){
+      return {
+        "detail": feature.attributes.text,
+        "distance": dojo.number.format(feature.attributes.length,{places:2}),
+        "index": index
+      }
+    });
+    grid = new dgrid.Grid({
+      renderRow:renderList,
+      showHeader:false
+    },"grid");
+    grid.renderArray(data);
+  }
+  
+  function renderList(obj,options){
+   var template = "<div class='detail'><div style='max-width:70%;float:left;'><a  href='#' onclick='zoomToSegment(${index});'> ${detail}</a></div><span style='float:right;' class='distance'>${distance} mi</span></div>";       
+   return dojo.create("div",{innerHTML:esri.substitute(obj,template)});
+ }
+
+   //Display any errors that were caught when attempting to solve the route.
+  function errorHandler() {
+  //  $.get("/app/WorkOrder/invalidAddress",{});
+  }
+  
+  function zoomToSegment(index) {
+    var segment = directionFeatures[index];
+    var segmentSymbol = new esri.symbol.SimpleLineSymbol().setColor(new dojo.Color([255,0,0,0.5])).setWidth(8);
+
+    map.setExtent(segment.geometry.getExtent(), true);
+    if (! segmentGraphic) {
+      segmentGraphic = map.graphics.add(new esri.Graphic(segment.geometry, segmentSymbol));
+    } else {
+      segmentGraphic.setGeometry(segment.geometry);
+    }
+  }
+    
+</script>
+

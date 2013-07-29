@@ -1,0 +1,33 @@
+sdkversion: "3.5.0"
+name: "FieldServiceManagement"
+version: "1.0"
+vendor: "rhomobile"
+build: "debug"
+bbver: "4.6"
+applog: "rholog.txt"
+iphone:
+  configuration: "Release"
+  sdk: "iphonesimulator5.0"
+  provisionprofile: 
+  codesignidentity: 
+  entitlements: 
+  BundleIdentifier: "com.rhomobile.fieldservicemanagement"
+  BundleURLScheme: "fieldservicemanagement"
+  emulatortarget: "iphone"
+wp:
+  productid: "80a05750-a4dd-0130-2ef9-704da2f264ca"
+symbian:
+  uid: "0xe00861c8"
+android:
+  version: "2.1"
+extensions:
+  - json
+  - Barcode
+  - another-extension
+app_type: "rhoelements"
+rhoelements:
+  config: "Config.xml"
+capabilities:
+  - gps
+  - camera
+  - motorola_browser

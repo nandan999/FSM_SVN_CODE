@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Mobile-Application/!svn/ver/2249/POC/RHO/FieldServiceManagement/framework
+END
+date.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/date.rb
+END
+indifferent_access.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/indifferent_access.rb
+END
+rhodes-framework.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rhodes-framework.rb
+END
+find.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/find.rb
+END
+rhoappmanifest.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rhoappmanifest.rb
+END
+rhomotoapi.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rhomotoapi.rb
+END
+rational18.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rational18.rb
+END
+base64.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/base64.rb
+END
+rhodes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rhodes.rb
+END
+version.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/version.rb
+END
+builtinME.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/builtinME.rb
+END
+rho.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rho.rb
+END
+rbconfig.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rbconfig.rb
+END
+rationalME.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rationalME.rb
+END
+rhofsconnector.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rhofsconnector.rb
+END
+rhosystem.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rhosystem.rb
+END
+dateOrig.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/dateOrig.rb
+END
+stringio.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/stringio.rb
+END
+time.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/time.rb
+END
+dateME.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/dateME.rb
+END
+singleton.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/singleton.rb
+END
+ostruct.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/ostruct.rb
+END
+rhom.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rhom.rb
+END
+rhoframework.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rhoframework.rb
+END
+bsearch.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/bsearch.rb
+END
+erb.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/erb.rb
+END
+rational.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Mobile-Application/!svn/ver/2197/POC/RHO/FieldServiceManagement/framework/rational.rb
+END
